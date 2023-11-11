@@ -1,0 +1,19 @@
+// javaを使ったソースファイルであることを宣言
+// applicaitonpluginを宣言することで、javaコマンドではなく、gradleコマンドでアプリを実行することができるようになる。
+plugins {
+    id 'java'
+    id 'application'
+}
+
+// mainクラスの名前を記載（現場のbuild.gradleにはなかった気がする。。）
+mainClassName = 'sample.gradle.GradleMain'
+
+dependencies {
+    // テストケースは特に書いていないが、一旦記載
+    // ここに取り込みたいライブラリを書くだけで、External Librariesに取り込んでくれる。
+    testImplementation 'junit:junit:4.12'
+}
+// 外からコピーしたのみ。よくわかっていない。。
+repositories {
+    jcenter()
+}
