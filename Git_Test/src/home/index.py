@@ -32,7 +32,8 @@ memo_list = ["PHPにべた書きだと動くけど、pythonからbuttonタブを
              "次すること：DB接続（その前に新しい環境になったので、DBのテーブルを作る必要あり）",
              "次すること：pythonのimport方法を明確に（別階層にあるUtilやSubを参照する方法を知る）",
              "その内する：CSSの作成",
-             "課題：buttonをたくさん作ると煩雑になるため、ボタンやインプット用のクラスを作った方がよさそう"
+             "課題：buttonをたくさん作ると煩雑になるため、ボタンやインプット用のクラスを作った方がよさそう",
+             "ここのメモもtextから読みだす方法にした方がいいかも（更新が面倒）"
              ]
 
 # if len(argvs) != 2:  # デバッグ用
@@ -79,6 +80,7 @@ if len(argvs) >= 2:
                            + "<br>↑のtextboxに入力した値が、ボタンを押下した後、画面上部に表示される。"))
 
     # リスト出力用テスト
+    # ul,olのtype選択、True,Falseじゃなくて、ul,olの文字列を入力する方が可読性高くなるので、変更したい
     print(Util.getListHTML(test_list, False, None))
     print(Util.getListHTML(test_list, True, None))
     print(Util.getListHTML(test_list, True, "a"))
