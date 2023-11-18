@@ -24,17 +24,18 @@ button3 = Util.getButtonHTML(type_button, "test3", None, "テスト03", url_test
 
 test_list = ["りんご", "ごりら", "らま"]
 
-memo_list = ["PHPにべた書きだと動くけど、pythonからbuttonタブを取得してprintするのができない。Why？<br>＞pythonのコード1行目に　# -*- coding: utf-8 -*-　を入力すると解決",
-             "pythonで出力するためにはprintを行う必要があるが、phpから呼び出したファイル以外でprintを行うとエラーになる",
-             "phpで出力する際、ダブルクオーテーションなどのエスケープ処理は（表示しない場合は）必要なし",
-             "<a href='https://qiita.com/_Kohei_/items/069aa1e7b872f5ca96bf'>アンダースコアの使い方について</a>",
-             "<s>次すること：入力フォームを作る→このページに戻ってきて入力した内容が特定の場所に表示出来ていること</s> ＞ 取り敢えず出来た",
-             "次すること：DB接続（その前に新しい環境になったので、DBのテーブルを作る必要あり）",
-             "次すること：pythonのimport方法を明確に（別階層にあるUtilやSubを参照する方法を知る）",
-             "その内する：CSSの作成",
-             "課題：buttonをたくさん作ると煩雑になるため、ボタンやインプット用のクラスを作った方がよさそう",
-             "ここのメモもtextから読みだす方法にした方がいいかも（更新が面倒）"
-             ]
+memo_list = [
+    "PHPにべた書きだと動くけど、pythonからbuttonタブを取得してprintするのができない。Why？<br>＞pythonのコード1行目に　# -*- coding: utf-8 -*-　を入力すると解決",
+    "pythonで出力するためにはprintを行う必要があるが、phpから呼び出したファイル以外でprintを行うとエラーになる",
+    "phpで出力する際、ダブルクオーテーションなどのエスケープ処理は（表示しない場合は）必要なし",
+    "<a href='https://qiita.com/_Kohei_/items/069aa1e7b872f5ca96bf'>アンダースコアの使い方について</a>",
+    "<s>次すること：入力フォームを作る→このページに戻ってきて入力した内容が特定の場所に表示出来ていること</s> ＞ 取り敢えず出来た",
+    "次すること：DB接続（その前に新しい環境になったので、DBのテーブルを作る必要あり）",
+    "次すること：pythonのimport方法を明確に（別階層にあるUtilやSubを参照する方法を知る）",
+    "その内する：CSSの作成",
+    "課題：buttonをたくさん作ると煩雑になるため、ボタンやインプット用のクラスを作った方がよさそう",
+    "ここのメモもtextから読みだす方法にした方がいいかも（更新が面倒）",
+]
 
 # if len(argvs) != 2:  # デバッグ用
 if len(argvs) >= 2:
@@ -49,35 +50,27 @@ if len(argvs) >= 2:
     print(Util.getButtonHTML(type_button, "test2", None, "テスト02", url_test02))
     print(Util.getButtonHTML(type_button, "test3", None, "テスト03", url_test03))
 
-    print(Util.getButtonHTML(type_button,
-                             "test1_file送信", None, "テスト01file", url_test01_file))
-    print(Util.getButtonHTML(type_button,
-                             "test1_name送信", None, "テスト01name", url_test01_name))
+    print(Util.getButtonHTML(type_button, "test1_file送信", None, "テスト01file", url_test01_file))
+    print(Util.getButtonHTML(type_button, "test1_name送信", None, "テスト01name", url_test01_name))
 
     print("<br>")
     print("text01" + Util.getTextBoxHTML(type_text, "text01", "初期値", "20", 25))
     print("<br>")
-    print("password01" + Util.getTextBoxHTML(type_password,
-                                             "password01", "12345", "12", 15))
+    print("password01" + Util.getTextBoxHTML(type_password, "password01", "12345", "12", 15))
     print("<br>")
 
     print("<br>")
     # ボタン押下時に画面リロードされない
-    print("特に何も起こらない" + Util.getButtonHTML(type_submit,
-                                           "submit_button",
-                                           None,
-                                           "button_submit",
-                                           None))
+    print("特に何も起こらない" + Util.getButtonHTML(type_submit, "submit_button", None, "button_submit", None))
     # ボタン押下時に画面リロードされる
-    print(Util.addPostForm("リロードされる"
-                           + Util.getTextBoxHTML(type_password,
-                                                 "post_text", "kizuna", "20", "30")
-                           + Util.getButtonHTML(type_submit,
-                                                "post_submit_button",
-                                                None,
-                                                "button_submit_post",
-                                                None)
-                           + "<br>↑のtextboxに入力した値が、ボタンを押下した後、画面上部に表示される。"))
+    print(
+        Util.addPostForm(
+            "リロードされる"
+            + Util.getTextBoxHTML(type_password, "post_text", "kizuna", "20", "30")
+            + Util.getButtonHTML(type_submit, "post_submit_button", None, "button_submit_post", None)
+            + "<br>↑のtextboxに入力した値が、ボタンを押下した後、画面上部に表示される。"
+        )
+    )
 
     # リスト出力用テスト
     # ul,olのtype選択、True,Falseじゃなくて、ul,olの文字列を入力する方が可読性高くなるので、変更したい
@@ -106,3 +99,5 @@ else:
 # 【Memo】
 # 別のクラスでprintするのはNG
 # PHPで呼び出したクラス内でprintしないといけない
+
+# test message add
